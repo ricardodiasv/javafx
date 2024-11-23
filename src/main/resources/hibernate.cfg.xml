@@ -1,0 +1,25 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuração de conexão -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/teste2</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+
+        <!-- Especificação do Schema:-->
+        <property name="hibernate.default_schema">dbjpa</property>
+
+
+        <!-- Configurações do Hibernate -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Configuração de pacotes de entidades -->
+        <mapping class="com.example.crudjpa.model.entities.Pessoa" />
+        <mapping class="com.example.crudjpa.model.entities.Passaporte" />
+        <mapping class="com.example.crudjpa.model.entities.Departamento" />
+        <mapping class="com.example.crudjpa.model.entities.Funcionario" />
+    </session-factory>
+</hibernate-configuration>
